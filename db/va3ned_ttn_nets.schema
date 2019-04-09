@@ -1,0 +1,42 @@
+#
+# Description
+# -----------
+# This table stores the nets.
+#
+# Fields
+# ------
+# id:                       The ID assigned to the record.
+# uuid:                     The Universal Unique ID.
+# tnid:                     The Tenant ID the record belongs to.
+#
+# name:                     The name for the net
+# status:                   The current status of the net.
+#
+#                               10 - Pending
+#                               50 - Running
+#                               90 - Closed
+#       
+# start_date:               The UTC date and time of the start of the net.
+# end_date:                 The UTC date and time of the end of the net.
+#
+# message_source:           The source of the messages, a file in the messages folder.
+# place_of_origin:          The default to use for place of origin in messages.
+#
+# date_added:               The UTC date and time the record was added.
+# last_updated:             The UTC date and time the record was last update.
+#
+create table va3ned_ttn_nets (
+    id int not null auto_increment,
+    uuid char(36) not null,
+    tnid int not null,
+    name varchar(150) not null,
+    status tinyint unsigned not null,
+    start_utc datetime not null,
+    end_utc datetime not null,
+    message_source varchar(250) not null,
+    date_added datetime not null,
+    last_updated datetime not null,
+    primary key (id),
+    unique index (uuid),
+    index sync (tnid, uuid, last_updated)
+) ENGINE='InnoDB', COMMENT='v1.01';
