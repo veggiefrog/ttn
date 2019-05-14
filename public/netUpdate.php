@@ -19,10 +19,10 @@ function va3ned_ttn_netUpdate(&$ciniki) {
         'net_id'=>array('required'=>'yes', 'blank'=>'no', 'name'=>'Net'),
         'name'=>array('required'=>'no', 'blank'=>'no', 'name'=>'Name'),
         'status'=>array('required'=>'no', 'blank'=>'yes', 'name'=>'Status'),
-        'start_utc_date'=>array('required'=>'yes', 'blank'=>'yes', 'name'=>'Start Date'),
-        'start_utc_time'=>array('required'=>'yes', 'blank'=>'yes', 'name'=>'Start Time'),
-        'end_utc_date'=>array('required'=>'yes', 'blank'=>'yes', 'name'=>'End Date'),
-        'end_utc_time'=>array('required'=>'yes', 'blank'=>'yes', 'name'=>'End Time'),
+        'start_utc_date'=>array('required'=>'no', 'blank'=>'yes', 'name'=>'Start Date'),
+        'start_utc_time'=>array('required'=>'no', 'blank'=>'yes', 'name'=>'Start Time'),
+        'end_utc_date'=>array('required'=>'no', 'blank'=>'yes', 'name'=>'End Date'),
+        'end_utc_time'=>array('required'=>'no', 'blank'=>'yes', 'name'=>'End Time'),
         ));
     if( $rc['stat'] != 'ok' ) {
         return $rc;

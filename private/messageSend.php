@@ -30,7 +30,7 @@ function va3ned_ttn_messageSend(&$ciniki, $tnid, $message_id) {
         . "va3ned_ttn_messages.date_filed, "
         . "va3ned_ttn_messages.to_name_address, "
         . "va3ned_ttn_messages.phone_number, "
-        . "va3ned_ttn_messages.email, "
+        . "va3ned_ttn_messages.email AS to_email, "
         . "va3ned_ttn_messages.message, "
         . "va3ned_ttn_messages.signature, "
         . "participants.callsign, "
@@ -55,7 +55,7 @@ function va3ned_ttn_messageSend(&$ciniki, $tnid, $message_id) {
             'fields'=>array('id', 'participant_id', 'status', 'callsign', 'name', 'email', 'net_name',
                 'number', 'precedence', 'hx', 'station_of_origin', 'check_number', 
                 'place_of_origin', 'time_filed', 'date_filed', 
-                'to_name_address', 'phone_number', 'email', 
+                'to_name_address', 'phone_number', 'to_email', 
                 'message', 'signature'),
             ),
         ));
@@ -81,7 +81,7 @@ function va3ned_ttn_messageSend(&$ciniki, $tnid, $message_id) {
         . "Date Filed: " . $message['date_filed'] . "\n"
         . "To: " . $message['to_name_address'] . "\n"
         . "Phone: " . $message['phone_number'] . "\n"
-        . "Email: " . $message['email'] . "\n"
+        . "Email: " . $message['to_email'] . "\n"
         . "\n";
     $c = 0;
     foreach($words as $word) {
